@@ -3,8 +3,7 @@ LABEL maintainer="cipherz <dev@cipherz.com>"
 
 COPY ./bin /usr/local/bin
 
-RUN VERSION=$(cat /tmp/VERSION) && \
-    chmod a+x /usr/local/bin/* && \
+RUN chmod a+x /usr/local/bin/* && \
     apk add --no-cache git build-base openssl && \
     apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing leveldb-dev && \
     pip install aiohttp pylru plyvel && \
